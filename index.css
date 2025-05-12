@@ -1,0 +1,214 @@
+body {
+  font-family: "Inconsolata", monospace;
+  margin: 0;
+}
+
+header {
+  color: white;
+  font-family: "Inconsolata", monospace;
+  -webkit-text-stroke: 1px black;
+  text-align: center;
+  background-color: orangered;
+  background-image: url("../public/OKC-Skyline-High.jpg");
+  background-repeat: no-repeat;
+  background-position: center top 25%;
+  background-size: cover;
+
+  background-attachment: fixed;
+  position: relative;
+
+  padding-top: 200px;
+  padding-bottom: 200px;
+
+  outline: 2px solid black;
+  max-width: 100%;
+}
+
+.okcSubText {
+  color: white;
+  font-weight: bold;
+  font-size: x-large;
+  font-family: "Inconsolata", monospace;
+  position: relative;
+  bottom: 1rem;
+}
+
+/* Primary-Header */
+.headContainer {
+  left: 0;
+  top: 0;
+}
+
+.Logo {
+  z-index: 1;
+  justify-content: flex-start;
+  position: relative;
+  bottom: 12rem;
+}
+.nav-list {
+  list-style: none;
+  padding-right: 2rem;
+  z-index: 2;
+  justify-content: flex-end;
+  position: relative;
+  bottom: 18rem;
+}
+
+.nav-text {
+  text-decoration: none;
+  font-family: "Inconsolata", monospace;
+  font-weight: bold;
+  font-size: larger;
+  color: black;
+}
+
+.nav-list li a {
+  transition: all 0.3s ease 0s;
+}
+
+.nav-list li a:hover {
+  color: orangered;
+}
+
+.information {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  font-size: larger;
+}
+
+.information {
+  --skew-angle: -45deg;
+
+  position: relative;
+}
+
+.information::after {
+  content: "";
+  background-image: linear-gradient(45deg, orangered, orange);
+  position: absolute;
+  inset: 0;
+  transform: skewY(var(--skew-angle));
+  z-index: -1;
+}
+
+.inforItem1 {
+  position: relative;
+  top: 2rem;
+}
+
+.inforItem1 {
+  color: white;
+  font-size: 19px;
+  padding: 10px 20px 10px 100px;
+  background-color: rgba(3, 78, 136, 0.7);
+  width: fit-content;
+}
+.inforItem1::before {
+  content: "";
+  position: absolute;
+  border: 20px solid transparent;
+  border-bottom-color: rgba(3, 78, 136, 0.7);
+  border-left-color: rgba(3, 78, 136, 0.7);
+  left: 100%;
+  top: 0;
+  height: 0;
+}
+
+.inforItem2 {
+  grid-column: 1 / 2;
+  color: black;
+}
+
+.inforItem2 > li {
+  padding: 1rem;
+}
+
+.OkcTeamPhoto {
+  max-width: 100%;
+  margin-left: auto;
+}
+
+.inforItem2 > ::marker {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\e0b7";
+  color: rgba(3, 78, 136, 0.7);
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+.Accolades {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  font-size: larger;
+}
+
+.Accolades > h3 {
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-thickness: 0.125rem;
+  text-decoration-color: rgba(3, 78, 136, 0.7);
+}
+
+.AList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  font-size: larger;
+}
+
+.AccoladesList {
+  text-align: center;
+  list-style-position: inside;
+}
+
+.AccoladesList > ::marker {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\e0b7";
+  color: rgba(3, 78, 136, 0.7);
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .information > * {
+    scale: 0.8;
+    opacity: 0;
+    animation: fade-in linear forwards;
+    animation-timeline: view();
+    animation-range-start: cover;
+    animation-range-end: 500px;
+  }
+}
+
+@keyframes fade-in {
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+.wrapper {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+
